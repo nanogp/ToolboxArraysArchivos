@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1528228688 source:d:\github\toolboxarraysarchivo\archivo.c
+	"Archivo.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
+1528235585 d:\github\toolboxarraysarchivo\archivo.h
+	<stdio.h>
+
+1529707165 source:d:\github\toolboxarraysarchivo\general.c
+	"General.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1529707165 d:\github\toolboxarraysarchivo\general.h
+
+1529953116 source:d:\github\toolboxarraysarchivo\menu.c
+	"Menu.h"
+	"General.h"
+	<stdio.h>
+
+1529952509 d:\github\toolboxarraysarchivo\menu.h
+
+1529952432 source:d:\github\toolboxarraysarchivo\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1528489068 d:\github\toolboxarraysarchivo\arraylist.h
+
+1529952817 source:d:\github\toolboxarraysarchivo\padre.c
+	"Padre.h"
+	<stdio.h>
+	<string.h>
+
+1529707165 d:\github\toolboxarraysarchivo\padre.h
+	"General.h"
+	"Menu.h"
+
+1529953153 source:d:\github\toolboxarraysarchivo\main.c
+	"General.h"
+	"Menu.h"
+	"ArrayList.h"
+	"Padre.h"
+	<stdio.h>
+	<stdlib.h>
+
+1529953552 source:d:\github\toolboxarraysarchivo\parser.c
+	"Parser.h"
+	"ArrayList.h"
+	"Person.h"
+	"Archivo.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1528235781 d:\github\toolboxarraysarchivo\parser.h
+	"General.h"
+	"ArrayList.h"
+	<stdio.h>
+
+1529953678 d:\github\toolboxarraysarchivo\person.h
+	"General.h"
+	"Menu.h"
+
