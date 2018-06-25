@@ -1,7 +1,7 @@
-/**************************** INCLUSION DE LIBRERIAS PERSONALES **********************************/
+/**************************** INCLUSION DE EMPTYRIAS PERSONALES **********************************/
 #include "General.h"
 
-/**************************** INCLUSION DE LIBRERIAS ESTANDAR ************************************/
+/**************************** INCLUSION DE EMPTYRIAS ESTANDAR ************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

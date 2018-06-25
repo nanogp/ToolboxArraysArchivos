@@ -12,8 +12,12 @@
 #define STRING_LARGO_MAX 1000
 
 /**************************** CONSTANTES *********************************************************/
-#define OCUPADO 1
-#define LIBRE 0
+#define OCCUPIED 1
+#define EMPTY 0
+#define OK 0
+#define CHECK_POINTER -1
+#define CHECK_SPACE -2
+#define CHECK_IS_EMPTY -3
 
 /**************************** MENSAJES INFO ******************************************************/
 #define MSJ_CONFIRMA_CORRECTOS "Confirma que los datos ingresados son correctos?"

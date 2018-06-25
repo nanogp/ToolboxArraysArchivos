@@ -2,14 +2,14 @@
 #ifndef ARCHIVO_H_INCLUDED
 #define ARCHIVO_H_INCLUDED
 
-/**************************** INCLUSION DE LIBRERIAS ESTANDAR ************************************/
+/**************************** INCLUSION DE EMPTYRIAS ESTANDAR ************************************/
 #include <stdio.h>
 
 /**************************** LIMITES ************************************************************/
-#define ARCHIVO_HTML_LARGO_NOMBRE 255
+#define ARCHIVO_HTML_LARGO_NAME 255
 
 /**************************** CONSTANTES *********************************************************/
-#define ARCHIVO_TEXTO_NOMBRE "data.csv"
+#define ARCHIVO_TEXTO_NAME "data.csv"
 #define ARCHIVO_TEXTO_LECTURA "r"
 #define ARCHIVO_TEXTO_ESCRITURA "w"
 

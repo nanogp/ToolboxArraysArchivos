@@ -48,10 +48,6 @@
 		</Unit>
 		<Unit filename="Menu.h" />
 		<Unit filename="Padre.h" />
-		<Unit filename="Parser.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Parser.h" />
 		<Unit filename="Person.c">
 			<Option compilerVar="CC" />
 		</Unit>

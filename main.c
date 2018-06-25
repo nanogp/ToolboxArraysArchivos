@@ -1,10 +1,10 @@
-/**************************** INCLUSION DE LIBRERIAS PERSONALES **********************************/
+/**************************** INCLUSION DE EMPTYRIAS PERSONALES **********************************/
 #include "General.h"
 #include "Menu.h"
 #include "ArrayList.h"
 
 
-/**************************** INCLUSION DE LIBRERIAS ESTANDAR ************************************/
+/**************************** INCLUSION DE EMPTYRIAS ESTANDAR ************************************/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -44,37 +44,37 @@ int main()
         switch(opcion)
         {
             case 1:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 2:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 3:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 4:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 5:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 6:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 7:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 8:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 9:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 10:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 11:
-                imprimirTitulo(menuPrincipal.descripciones[opcion-1]);pausa();
+                pausa();
                 break;
             case 0:
                 salirDelPrograma = pedirConfirmacion("Confirma que desea salir del programa?");

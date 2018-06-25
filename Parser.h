@@ -3,11 +3,11 @@
 #define PARSER_H_INCLUDED
 
 
-/**************************** INCLUSION DE LIBRERIAS PERSONALES **********************************/
+/**************************** INCLUSION DE EMPTYRIAS PERSONALES **********************************/
 #include "General.h"
 #include "ArrayList.h"
 
-/**************************** INCLUSION DE LIBRERIAS ESTANDAR ************************************/
+/**************************** INCLUSION DE EMPTYRIAS ESTANDAR ************************************/
 #include <stdio.h>
 
 /**************************** MASCARAS ***********************************************************/
@@ -16,6 +16,6 @@
 /**************************** GESTION DE DATOS ***************************************************/
 int charToIsEmpty(char* cadena);
 //-----------------------------------------------------------------------------------------------//
-int parserEmployee(FILE* pFile, ArrayList* pArrayListEmployee);
+int parserPerson(FILE* pFile, ArrayList* pArrayListPerson);
 //-----------------------------------------------------------------------------------------------//
 #endif // PARSER_H_INCLUDED

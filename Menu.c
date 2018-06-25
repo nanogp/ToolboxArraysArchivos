@@ -1,8 +1,8 @@
-/**************************** INCLUSION DE LIBRERIAS PERSONALES **********************************/
+/**************************** INCLUSION DE EMPTYRIAS PERSONALES **********************************/
 #include "Menu.h"
 #include "General.h"
 
-/**************************** INCLUSION DE LIBRERIAS ESTANDAR ************************************/
+/**************************** INCLUSION DE EMPTYRIAS ESTANDAR ************************************/
 #include <stdio.h>
 
 
