@@ -1,6 +1,7 @@
 /**************************** INCLUSION DE EMPTYRIAS PERSONALES **********************************/
 #include "ArrayList.h"
 #include "Person.h"
+#include "Menu.h"
 /**************************** INCLUSION DE EMPTYRIAS ESTANDAR ************************************/
 #include <stdio.h>
 #include <stdlib.h>
@@ -566,6 +567,145 @@ int ePerson_gestionBaja(ArrayList* this)
 }
 //-----------------------------------------------------------------------------------------------//
 
+/**************************** GESTION DE DATOS ***************************************************/
+int ePerson_modificarUno(ePerson* onePerson)
+{
+    int returnAux = CHECK_POINTER;
+    eMenu menuModificar = {/*titulo del menu*/{"Que desea modificar?"},
+                           /*cantidad de opciones*/6,
+                           /*codigos*/{1,2,3,4,
+                                       9,0},
+                           /*descripciones*/"\n  1. Dni"
+                                            "\n  2. Stats"
+                                            "\n  3. Nombre"
+                                            "\n  4. Apellido"
+                                            "\n  9. FINALIZAR CAMBIOS"
+                                            "\n  0. CANCELAR"};
+    int opcion;
+    #define HUBO_CAMBIOS 1
+    char finalizar = 'N';
+
+    if(onePerson != NULL)
+    {
+        returnAux = OK;
+        do
+        {
+            limpiarPantallaYMostrarTitulo(MSJ_MODIFICANDO_REGISTRO);
+            imprimirEnPantalla(MSJ_DATOS_A_MODIFICAR);
+
+            imprimirEnPantalla(PERSON_PRINT_MASK_CABECERA);
+            onePerson->print(onePerson);
+            saltoDeLinea();
+
+            opcion = eMenu_pedirOpcion(&menuModificar);
+            switch(opcion)
+            {
+                case 1:
+                    onePerson->setDni(ePerson_askDni());
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 2:
+                    onePerson->setStats(ePerson_askStats());
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 3:
+                    onePerson->setName(ePerson_askName());
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 4:
+                    onePerson->setLastName(ePerson_askLastName());
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 5:
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 6:
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 7:
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 8:
+                    returnAux = HUBO_CAMBIOS;
+                    break;
+                case 9:
+                    finalizar = 'S';
+                    break;
+                case 0:
+                    finalizar = 'S';
+                    returnAux = OK;
+                    break;
+            }
+        }
+        while(finalizar == 'N');
+    }
+    return returnAux;
+}
+
+int ePerson_gestionModificar(ArrayList* this)
+{
+   int returnAux = CHECK_POINTER;
+   ePerson* onePerson;
+   ePerson tempPerson;
+   char confirmacion;
+   int huboCambios;
+
+   if(this != NULL)
+   {
+      returnAux = OK;
+      limpiarPantallaYMostrarTitulo(PERSON_MODIFICACION_TITULO);
+
+      if(!ePerson_listIsEmptyLegend(this))
+      {
+         onePerson = ePerson_getByAskDni(this);
+         tempPerson = *onePerson; //copio el registro para no pisar el origen
+
+         huboCambios = ePerson_modificarUno(&tempPerson);
+
+         if(huboCambios > 0)
+         {
+            /*if(aca se pregunta si hubo cambios que requieran reprocesar)
+            {
+            se recalcularian promedios por ej->
+            }*/
+
+            limpiarPantallaYMostrarTitulo(PERSON_MODIFICACION_TITULO);
+
+            imprimirEnPantalla(PERSON_MSJ_REGISTRO_ACTUAL);
+            imprimirEnPantalla(PERSON_PRINT_MASK_CABECERA);
+            onePerson->print(onePerson);
+
+            imprimirEnPantalla(PERSON_MSJ_REGISTRO_MODIFICADO);
+            imprimirEnPantalla(PERSON_PRINT_MASK_CABECERA);
+            tempPerson.print(&tempPerson);
+
+            saltoDeLinea();
+            confirmacion = pedirConfirmacion(MSJ_CONFIRMA_CORRECTOS);
+         }
+         else
+         {
+            confirmacion = 'N';
+         }
+
+         if(confirmacion == 'S')
+         {
+            *onePerson = tempPerson;
+            ePerson_sortByDni(this);
+            imprimirEnPantalla(PERSON_MSJ_MODIFICACION_OK);
+         }
+         else
+         {
+            imprimirEnPantalla(MSJ_CANCELO_GESTION);
+         }
+      }//empty
+      pausa();
+   }//null
+
+   return returnAux;
+}
+//-----------------------------------------------------------------------------------------------//
+
+
 
 /**************************** GESTION DE DATOS ***************************************************/
 void ePerson_delete(ePerson* this)
@@ -623,15 +763,15 @@ void ePerson_gestionOrdenar(ArrayList* this)
 
 
 /**************************** ORDENAMIENTO *******************************************************/
-int c(void* pPersonA, void* pPersonB)
+int ePerson_compareByDni(void* pPersonA, void* pPersonB)
 {
    int returnAux = 0;
 
-   if((ePerson*)pPersonA->getDni(pPersonA) > (ePerson*)pPersonB->getDni(pPersonB))
+   if(((ePerson*)pPersonA)->getDni(pPersonA) > ((ePerson*)pPersonB)->getDni(pPersonB))
    {
       returnAux = 1;
    }
-   else if((ePerson*)pPersonA->getDni(pPersonA) < (ePerson*)pPersonB->getDni(pPersonB))
+   else if(((ePerson*)pPersonA)->getDni(pPersonA) < ((ePerson*)pPersonB)->getDni(pPersonB))
    {
       returnAux = -1;
    }
@@ -645,7 +785,7 @@ int ePerson_compareByName(void* pPersonA,void* pPersonB)
 }
 //-----------------------------------------------------------------------------------------------//
 int ePerson_sortByDni(ArrayList* this)
-{s
+{
    int returnAux = CHECK_POINTER;
 
    if(this!=NULL)
@@ -658,7 +798,7 @@ int ePerson_sortByDni(ArrayList* this)
 }
 //-----------------------------------------------------------------------------------------------//
 int ePerson_sortByName(ArrayList* this)
-{s
+{
    int returnAux = CHECK_POINTER;
 
    if(this!=NULL)

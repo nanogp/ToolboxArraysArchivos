@@ -40,6 +40,7 @@
 #define PERSON_LISTADO_TITULO "LISTADO DE PERSONS"
 #define PERSON_LISTADO_RANGO_TITULO "LISTADO DE PERSONS POR RANGO"
 #define PERSON_PARSER_TITULO "PARSER ARCHIVO CSV DE PERSONS"
+#define PERSON_ORDEN_TITULO "ORDENAR LISTA DE PERSONS"
 
 /**************************** MENSAJES INFO ******************************************************/
 #define PERSON_MSJ_ALTA_OK "\nLa Person se dio de alta"
@@ -77,18 +78,6 @@
 /**************************** ORDENAMIENTO *******************************************************/
 #define PERSON_ORDEN_ASC 1
 #define PERSON_ORDEN_DESC 0
-
-/**************************** MENUS **************************************************************/
-#define PERSON_MENU_MODIFICAR_UNO_TITULO "Que desea modificar?"
-//" 1. Titulo"
-//" 2. Genero"
-//" 3. Duracion"
-//" 4. Descripcion"
-//" 5. Puntaje"
-//" 6. Link a imagen"
-//" 9. Finalizar modificacion"
-//" 0. Cancelar"
-
 
 /**************************** ESTRUCTURAS ********************************************************/
 struct
